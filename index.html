@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <title>Les petits plats</title>
+  </head>
+  <body>
+    <main class="main-container-wrapper">
+      <header>
+        <div class="logo">
+          <img src="assets/logo_lespetitsplats.png" alt="logo" />
+        </div>
+        <div class="search">
+          <label for="search-bar"></label>
+          <input
+            type="text"
+            id="search-bar"
+            name="search-bar"
+            placeholder="Rechercher une recette"
+          />
+        </div>
+        <section class="container-filters">
+          <div class="container-filters__selected-elements"></div>
+        </section>
+      </header>
+      <section class="recipes-container"></section>
+    </main>
+    <script src="scripts/pages/homepage.js" type="module"></script>
+    <script src="scripts/utils/search.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "p7_corentin_lumineau",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./stylesheets/index.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corentin-lumineau/p7_corentin_lumineau.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corentin-lumineau/p7_corentin_lumineau/issues"
+  },
+  "homepage": "https://github.com/corentin-lumineau/p7_corentin_lumineau#readme",
+  "dependencies": {
+    "sass": "^1.49.9"
+  }
+}

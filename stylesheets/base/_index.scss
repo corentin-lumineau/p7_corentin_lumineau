@@ -1,0 +1,28 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato";
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  color: rgba(0, 0, 0, 1);
+  opacity: 0.25;
+  font-size: 18px;
+}
+
+.main-container-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  padding: 20px 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}

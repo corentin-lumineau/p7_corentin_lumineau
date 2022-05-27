@@ -1,0 +1,236 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato";
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  color: black;
+  opacity: 0.25;
+  font-size: 18px;
+}
+
+.main-container-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  padding: 20px 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+header .logo {
+  display: flex;
+  justify-content: center;
+}
+header .logo img {
+  width: 350px;
+}
+header .search {
+  width: 100%;
+}
+header .search input {
+  width: 100%;
+  height: 60px;
+  background: #e7e7e7;
+}
+
+.container-filters {
+  height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container-filters__selected-elements {
+  display: flex;
+  gap: 20px;
+}
+.container-filters__selected-elements .bloc-element {
+  background: #3282f7;
+  padding: 1px 20px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+}
+.container-filters__selected-elements .bloc-element i {
+  border: solid 2px;
+  transform: scale(1.1);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.container-filters__selected-elements .bloc-element i:hover {
+  cursor: pointer;
+}
+.container-filters__selected-elements .bloc-element--blue {
+  background: #3282f7;
+}
+.container-filters__selected-elements .bloc-element--green {
+  background: #68d9a4;
+}
+.container-filters__selected-elements .bloc-element--red {
+  background: #ed6454;
+}
+.container-filters__wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.recipes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 40px;
+  column-gap: 66px;
+  margin-top: 20px;
+}
+
+.bloc-filter-wrapper {
+  display: block;
+  /*   &--left {
+      left: 0;
+      transform: translate(0%, 0%);
+    }
+
+    &--center {
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    &--right {
+      right: 0;
+      transform: translate(0%, 0%);
+    } */
+}
+.bloc-filter-wrapper .bloc-filter {
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+}
+.bloc-filter-wrapper .bloc-filter__title {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+}
+.bloc-filter-wrapper .bloc-filter__title .fas:hover {
+  cursor: pointer;
+}
+.bloc-filter-wrapper .bloc-filter__index {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 300px;
+  overflow: auto;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 15px;
+}
+.bloc-filter-wrapper .bloc-filter__index .element {
+  width: 200px;
+}
+.bloc-filter-wrapper .bloc-filter__index .element:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.bloc-filter-wrapper .bloc-filter__index .element--disabled {
+  color: grey;
+}
+.bloc-filter-wrapper .bloc-filter__index .element--disabled:hover {
+  cursor: default;
+  opacity: 1;
+}
+.bloc-filter-wrapper .bloc-filter--blue {
+  background: #3282f7;
+}
+.bloc-filter-wrapper .bloc-filter--green {
+  background: #68d9a4;
+}
+.bloc-filter-wrapper .bloc-filter--red {
+  background: #ed6454;
+}
+.bloc-filter-wrapper input {
+  background: unset;
+  color: white;
+  padding: unset;
+  opacity: 0.5;
+  height: 50px;
+}
+.bloc-filter-wrapper input::placeholder {
+  color: white;
+}
+
+.recipe-card {
+  width: 380px;
+  height: 364px;
+  background: #e7e7e7;
+  border-radius: 5px;
+}
+.recipe-card__illustration {
+  height: 50%;
+}
+.recipe-card__illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px 5px 0px 0px;
+}
+.recipe-card__infos {
+  height: 50%;
+  padding: 0px 15px;
+}
+.recipe-card__infos__title {
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe-card__infos__title__time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.recipe-card__infos__description {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  font-size: 12px;
+}
+.recipe-card__infos__description p {
+  margin: unset;
+}
+.recipe-card__infos__description__ingredients {
+  width: 50%;
+}
+.recipe-card__infos__description__details {
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1rem;
+  max-height: 5rem;
+  display: block;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/*# sourceMappingURL=style.css.map */
