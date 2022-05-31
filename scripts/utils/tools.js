@@ -1,11 +1,4 @@
 import Tag from "../templates/Tag.js";
-/*
-import {
-  createBlocSelectedElement,
-  cleanRecipesContainer,
-} from "../utils/display.js";
-import { blocElementSearch } from "./search.js";
-import { display } from "../pages/homepage.js";
 
 /**
  * This will accept a string to capitalize

@@ -1,4 +1,3 @@
-import { recipes } from "../../data/recipes.js";
 import { allRecipes } from "../pages/homepage.js";
 
 /**
@@ -100,33 +99,6 @@ export function blocElementSearch(recipes, element, type) {
 
   return arr;
 }
-
-/* export function getNewELements(recipes, type) {
-  const arr = [];
-  switch (type) {
-    case "Ingrédients":
-      recipes.forEach((recipe) => {
-        recipe.ingredients.forEach((ingredient) => {
-          arr.push(ingredient.ingredient);
-        });
-      });
-      break;
-    case "Appareils":
-      recipes.forEach((recipe) => {
-        arr.push(recipe.appliance);
-      });
-      break;
-    case "Ustensiles":
-      recipes.forEach((recipe) => {
-        recipe.ustensils.forEach((ustensil) => {
-          arr.push(ustensil);
-        });
-      });
-      break;
-  }
-
-  return arr;
-} */
 
 //RemoveTag search
 

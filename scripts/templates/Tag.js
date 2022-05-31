@@ -1,6 +1,4 @@
 import Filters from "./Filters.js";
-import { launchMainSearch } from "../pages/homepage.js";
-import { blocElementSearch } from "../utils/search.js";
 import { removeTagSearch } from "../utils/search.js";
 import { display } from "../pages/homepage.js";
 import { cleanRecipesContainer } from "../utils/display.js";

@@ -39,11 +39,5 @@ export default class RecipeCard {
     `;
 
     container.innerHTML += recipeCard;
-
-    /*  _ingredients.forEach((i) => {
-      const blocIngredient = document.createElement("p");
-      blocIngredient.innerHTML = `${i.ingredient}:${i.quantity}`;
-      containerIngredient.appendChild(blocIngredient);
-    }); */
   }
 }

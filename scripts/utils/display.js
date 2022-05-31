@@ -143,3 +143,9 @@ export function displayTagElementsSearch(elements, type, container) {
 
   return domElements;
 }
+
+export function displayNoResult() {
+  const recipesContainer = document.querySelector(".recipes-container");
+  recipesContainer.innerText =
+    "Aucune recette ne correspond à votre critère...vous pouvez cherchez 'tarte aux pommes', 'poissons'";
+}

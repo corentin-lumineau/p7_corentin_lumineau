@@ -9,7 +9,6 @@ import { specificSearch } from "../utils/search.js";
 import { blocElementSearch } from "../utils/search.js";
 import { display } from "../pages/homepage.js";
 import Filters from "./Filters.js";
-import { checkTagAndDisabled } from "../utils/tools.js";
 
 export default class Filter {
   constructor(recipes, containerFilter, type) {
@@ -98,7 +97,7 @@ export default class Filter {
     blocSearchElement.setAttribute("id", `search-${this.type}`);
     blocIndex.classList.add("bloc-filter__index");
     this.container.querySelector("i").classList = "fas fa-chevron-up";
-    //utiliser closest plutôt que firstElementChild *2
+
     this.container.firstElementChild.firstElementChild.remove();
     this.container.appendChild(blocIndex);
     blocTitle.insertBefore(blocSearchElement, blocTitle.children[0]);

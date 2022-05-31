@@ -5,18 +5,6 @@ export default class Filters {
     this.recipes = recipes;
   }
 
-  /* refreshFilters = (recipes) => {
-    const filterContainers = document.querySelectorAll(".bloc-filter__index");
-    filterContainers.forEach((container) => {
-      const mainContainerFilter = container.parentElement;
-      const type = mainContainerFilter.querySelector("i").id;
-      cleanContainerBloc(container);
-      const filterBloc = new Filter(recipes, mainContainerFilter, type);
-      filterBloc.render();
-    });
-  }; */
-
-  //Pas ES5
   handleChevron = () => {
     const chevrons = document.getElementsByName("bloc-filter");
     chevrons.forEach((chevron) => {
@@ -29,7 +17,6 @@ export default class Filters {
           const filterBloc = new Filter(this.recipes, containerFilter, type);
           filterBloc.render();
         } else {
-          //Mettre cette methode dans la classe filter
           removeIndexFilters(event, type);
         }
       });
@@ -37,7 +24,6 @@ export default class Filters {
   };
 
   render() {
-    // Faire une boucle pour créer le bloc en rentrant les arguments necessaires
     const container = document.querySelector(".container-filters");
     const dom = `
     <div class="container-filters__wrapper">
