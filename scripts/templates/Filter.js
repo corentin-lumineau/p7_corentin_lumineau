@@ -9,7 +9,6 @@ import { specificSearch } from "../utils/search.js";
 import { blocElementSearch } from "../utils/search.js";
 import { display } from "../pages/homepage.js";
 import Filters from "./Filters.js";
-import { checkTagAndDisabled } from "../utils/tools.js";
 
 export default class Filter {
   constructor(recipes, containerFilter, type) {
@@ -24,7 +23,7 @@ export default class Filter {
    *
    * @type {HTMLElement} blocIndex
    */
-
+  //Pas ES5
   loadFiltersElement = (blocIndex, blocSearchElement) => {
     let allElements = displayAllElements(blocIndex, this.recipes, this.type);
     const searchBar = document.getElementById(`search-${this.type}`);

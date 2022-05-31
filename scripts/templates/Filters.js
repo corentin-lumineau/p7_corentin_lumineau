@@ -5,18 +5,6 @@ export default class Filters {
     this.recipes = recipes;
   }
 
-  /* refreshFilters = (recipes) => {
-    const filterContainers = document.querySelectorAll(".bloc-filter__index");
-    filterContainers.forEach((container) => {
-      const mainContainerFilter = container.parentElement;
-      const type = mainContainerFilter.querySelector("i").id;
-      cleanContainerBloc(container);
-      const filterBloc = new Filter(recipes, mainContainerFilter, type);
-      filterBloc.render();
-    });
-  }; */
-
-  //Pas ES5
   handleChevron = () => {
     const chevrons = document.getElementsByName("bloc-filter");
     chevrons.forEach((chevron) => {
@@ -29,45 +17,54 @@ export default class Filters {
           const filterBloc = new Filter(this.recipes, containerFilter, type);
           filterBloc.render();
         } else {
-          //Mettre cette methode dans la classe filter
           removeIndexFilters(event, type);
         }
       });
     });
   };
 
-  render() {
-    // Faire une boucle pour créer le bloc en rentrant les arguments necessaires
+  createDom(types) {
     const container = document.querySelector(".container-filters");
-    const dom = `
-    <div class="container-filters__wrapper">
-      <div class="bloc-filter-wrapper">
-        <div class="bloc-filter bloc-filter--blue">
-          <div class="bloc-filter__title">
-            <p>Ingrédients</p>
-            <i class="fas fa-chevron-down" id="Ingrédients" name="bloc-filter"></i>
-          </div>
-        </div>
-      </div>
-      <div class="bloc-filter-wrapper">
-        <div class="bloc-filter bloc-filter--green">
-          <div class="bloc-filter__title">
-            <p>Appareils</p>
-            <i class="fas fa-chevron-down" id="Appareils" name="bloc-filter"></i>
-          </div>
-        </div>
-      </div>
-      <div class="bloc-filter-wrapper">
-        <div class="bloc-filter bloc-filter--red">
-          <div class="bloc-filter__title">
-            <p>Ustensiles</p>
-            <i class="fas fa-chevron-down" id="Ustensiles" name="bloc-filter"></i>
-          </div>
-        </div>
-      </div>
-    </div>`;
+    const containerFiltersWrapper = document.createElement("div");
+    containerFiltersWrapper.classList.add("container-filters__wrapper");
+    container.appendChild(containerFiltersWrapper);
 
-    container.insertAdjacentHTML("beforeend", dom);
+    for (var i = 0; i < types.length; i++) {
+      const blocFilterWrapper = document.createElement("div");
+      const blocFilter = document.createElement("div");
+      const blocTitle = document.createElement("div");
+      const content = document.createElement("p");
+      const chevron = document.createElement("i");
+
+      blocFilterWrapper.classList.add("bloc-filter-wrapper");
+      blocFilter.classList.add("bloc-filter");
+      blocTitle.classList.add("bloc-filter__title");
+      chevron.classList.add("fas");
+      chevron.classList.add("fa-chevron-down");
+
+      if (types[i] == "Ingrédients") {
+        blocFilter.classList.add("bloc-filter--blue");
+      } else if (types[i] == "Appareils") {
+        blocFilter.classList.add("bloc-filter--green");
+      } else {
+        blocFilter.classList.add("bloc-filter--red");
+      }
+
+      content.innerText = types[i];
+      chevron.setAttribute("id", types[i]);
+      chevron.setAttribute("name", "bloc-filter");
+
+      containerFiltersWrapper.appendChild(blocFilterWrapper);
+      blocFilterWrapper.appendChild(blocFilter);
+      blocFilter.appendChild(blocTitle);
+      blocTitle.appendChild(content);
+      blocTitle.appendChild(chevron);
+    }
+  }
+
+  render() {
+    var types = ["Ingrédients", "Appareils", "Ustensiles"];
+    this.createDom(types);
     this.handleChevron();
   }
 }

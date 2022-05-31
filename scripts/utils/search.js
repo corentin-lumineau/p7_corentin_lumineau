@@ -1,4 +1,3 @@
-import { recipes } from "../../data/recipes.js";
 import { allRecipes } from "../pages/homepage.js";
 
 /**
@@ -7,14 +6,16 @@ import { allRecipes } from "../pages/homepage.js";
  * @returns {{id: Number, name: String, servings: Number, ingredients: Array, appliance: String, time: Number}[]} the array of filtered Recipe object
  */
 export function resultSearch(input) {
-  const arr = [];
-  allRecipes.forEach((recipe) => {
-    titleSearch(input, recipe);
-    descriptionSearch(input, recipe);
-    recipe.ingredients.forEach((ingredient) => {
-      ingredientsSearch(input, ingredient, recipe);
-    });
-  });
+  var arr = [];
+
+  for (var i = 0; i < allRecipes.length; i++) {
+    titleSearch(input, allRecipes[i]);
+    descriptionSearch(input, allRecipes[i]);
+
+    for (var j = 0; j < allRecipes[i].ingredients; j++) {
+      ingredientsSearch(input, allRecipes[i].ingredients[j], allRecipes[i]);
+    }
+  }
 
   //Title search
   function titleSearch(input, recipe) {
