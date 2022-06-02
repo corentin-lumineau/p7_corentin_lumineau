@@ -1,4 +1,5 @@
 import { allRecipes } from "../pages/homepage.js";
+import { normalize } from "./tools.js";
 
 /**
  * This function will accept an input from the main searchbar and call all main type of research on it to return the filtered array
@@ -19,19 +20,19 @@ export function resultSearch(input) {
 
   //Title search
   function titleSearch(input, recipe) {
-    if (recipe.name.toUpperCase().includes(input.toUpperCase())) {
+    if (normalize(recipe.name).includes(normalize(input))) {
       arr.push(recipe);
     }
   }
   //Ingredients search
   function ingredientsSearch(input, ingredients, recipe) {
-    if (ingredients.ingredient.toUpperCase().includes(input.toUpperCase())) {
+    if (normalize(ingredients.ingredient).includes(normalize(input))) {
       arr.push(recipe);
     }
   }
   //Description search
   function descriptionSearch(input, recipe) {
-    if (recipe.description.toUpperCase().includes(input.toUpperCase())) {
+    if (normalize(recipe.description).includes(normalize(input))) {
       arr.push(recipe);
     }
   }

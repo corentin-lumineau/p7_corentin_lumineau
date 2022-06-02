@@ -26,3 +26,8 @@ export function checkTagAndDisabled(elements) {
     });
   }
 }
+
+export function normalize(input) {
+  input = input.toUpperCase();
+  return input;
+}

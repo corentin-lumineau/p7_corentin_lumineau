@@ -27,11 +27,12 @@ function launchMainSearch() {
     if (allRecipes.length == 0) {
       displayNoResult();
     }
-    //retirer les doublons via création d'un set
-    /*  allRecipes = Array.from(new Set(allRecipes)); */ //Pas ES5
-    allRecipes = allRecipes.filter(function (ele, pos) {
-      return allRecipes.indexOf(ele) == pos;
-    });
+    var unique = [];
+    for (var i = 0; i < allRecipes.length; i++) {
+      var current = allRecipes[i];
+      if (unique.indexOf(current) < 0) unique.push(current);
+    }
+    allRecipes = unique;
   } else {
     allRecipes = recipes;
   }
